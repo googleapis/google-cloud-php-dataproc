@@ -34,24 +34,6 @@ class VirtualClusterConfig extends \Google\Protobuf\Internal\Message
      */
     protected $staging_bucket = '';
     /**
-     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data,
-     * such as Spark and MapReduce history files.
-     * If you do not specify a temp bucket,
-     * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's temp bucket according to the
-     * Compute Engine zone where your cluster is deployed, and then create
-     * and manage this project-level, per-location bucket. The default bucket has
-     * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     * bucket (see
-     * [Dataproc staging and temp
-     * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
-     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
-     * a Cloud Storage bucket.**
-     *
-     * Generated from protobuf field <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    protected $temp_bucket = '';
-    /**
      * Optional. Configuration of auxiliary services used by this cluster.
      *
      * Generated from protobuf field <code>.google.cloud.dataproc.v1.AuxiliaryServicesConfig auxiliary_services_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -73,20 +55,6 @@ class VirtualClusterConfig extends \Google\Protobuf\Internal\Message
      *           ASIA, or EU) for your cluster's staging bucket according to the
      *           Compute Engine zone where your cluster is deployed, and then create
      *           and manage this project-level, per-location bucket (see
-     *           [Dataproc staging and temp
-     *           buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
-     *           **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
-     *           a Cloud Storage bucket.**
-     *     @type string $temp_bucket
-     *           Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data,
-     *           such as Spark and MapReduce history files.
-     *           If you do not specify a temp bucket,
-     *           Dataproc will determine a Cloud Storage location (US,
-     *           ASIA, or EU) for your cluster's temp bucket according to the
-     *           Compute Engine zone where your cluster is deployed, and then create
-     *           and manage this project-level, per-location bucket. The default bucket has
-     *           a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     *           bucket (see
      *           [Dataproc staging and temp
      *           buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      *           **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
@@ -144,56 +112,6 @@ class VirtualClusterConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->staging_bucket = $var;
-
-        return $this;
-    }
-
-    /**
-     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data,
-     * such as Spark and MapReduce history files.
-     * If you do not specify a temp bucket,
-     * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's temp bucket according to the
-     * Compute Engine zone where your cluster is deployed, and then create
-     * and manage this project-level, per-location bucket. The default bucket has
-     * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     * bucket (see
-     * [Dataproc staging and temp
-     * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
-     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
-     * a Cloud Storage bucket.**
-     *
-     * Generated from protobuf field <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return string
-     */
-    public function getTempBucket()
-    {
-        return $this->temp_bucket;
-    }
-
-    /**
-     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data,
-     * such as Spark and MapReduce history files.
-     * If you do not specify a temp bucket,
-     * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's temp bucket according to the
-     * Compute Engine zone where your cluster is deployed, and then create
-     * and manage this project-level, per-location bucket. The default bucket has
-     * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     * bucket (see
-     * [Dataproc staging and temp
-     * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
-     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
-     * a Cloud Storage bucket.**
-     *
-     * Generated from protobuf field <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTempBucket($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->temp_bucket = $var;
 
         return $this;
     }
